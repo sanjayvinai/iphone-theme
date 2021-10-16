@@ -6,6 +6,13 @@ var notificatonbtn = document.getElementById("notification")
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+(() =>{
+    var t = new Date;
+    time.innerHTML = `${t.getHours()}:${t.getMinutes()}`;
+    day.innerHTML = `${days[t.getDay()]}, ${months[t.getMonth()]} ${t.getDate()}`;
+})();
+
 setInterval(() => {
     var t = new Date;
     time.innerHTML = `${t.getHours()}:${t.getMinutes()}`;
