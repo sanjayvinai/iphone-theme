@@ -1,0 +1,189 @@
+:root{
+    --dark-theme: black;
+    --white-theme: white;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+header h1{
+    text-align: center;
+}
+
+main{
+    margin: auto;
+    width: 26%;
+    height: 99vh;
+    background-image: url(./images/dark.jpeg);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 20px 20px 30px 5px black;
+}
+#top-notch{
+    width: 40%;
+    height: 30px;
+    background-color: darkgrey;
+    margin: auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#top-notch #speaker{
+    content: "";
+    width: 40%;
+    height: 30%;
+    background-color: black;
+    border-radius: 50px;
+    
+}
+#camera{
+    margin-left: 5px;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 50%;
+}
+#clock{
+    margin-top: 10px;
+    text-align: center;
+    color: var(--white-theme);
+    font-size: 4rem;
+    font-weight: 100;
+    margin-bottom: 0px;
+}
+#lock{
+    color: var(--white-theme);
+    font-size: 4em;
+    padding-top: 22px;
+}
+#day-month{
+    text-align: center;
+    color: var(--white-theme);
+    margin-top: 0px;
+    /* font-size: 4rem; */
+    font-weight: 40;
+}
+#buttonsContainer{
+    margin:50px;
+    display: inline-block;
+    position: absolute;
+}
+#night{
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0px 0px black;
+}
+#night:hover{
+    cursor: pointer;
+    animation-name: modeToggle;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+}
+
+#notification-container{
+    margin: 20px 20px;
+    width: 90%;
+    height: 4em;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    animation-name: notification;
+    animation-duration: 1s;
+    position: relative;
+}
+
+#notification{
+    cursor: pointer;
+}
+
+#whatsappImg{
+    font-size: 2em;
+    margin-left: 10px;
+    padding: 4px;
+    /* background-color: green;
+    border-radius: 10px; */
+}
+#messageContainer{
+    margin-left: 5px;
+}
+#messageContainer h3{
+    margin-bottom: 5px;
+}
+
+#messageContainer p{
+    width: 99%;
+    margin-top: 0.6em;
+}
+
+#buttonsContainer{
+    display: flex;
+    flex-direction: column;
+}
+#notification{
+    font-size: 1em;
+    font-weight: 800;
+    position: absolute;
+    left: 90%;
+    top: 4em;
+    content: "";
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    background-image: repeating-linear-gradient(90deg, yellow, red);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 10px black;
+    animation-timing-function: linear;
+}
+
+#notification.verticalTranslate{
+    animation-name: notificationbtn;
+    animation-duration: 400ms;
+}
+
+@keyframes notificationbtn {
+    0%{
+        box-shadow: 0px 0px 10px 10px black;
+    }
+    50%{
+        box-shadow: 0px 0px 0px 0px black;
+    }
+    100%{
+        box-shadow: 0px 0px 10px 10px black;
+    }
+}
+
+@keyframes modeToggle{
+    50%{
+        background-color: yellow;
+        box-shadow: 10px 5px 10px 10px transparent;
+    }
+    100% {
+        background-color: orange;
+        box-shadow: 0px 0px 10px 10px transparent;
+    }
+}
+
+@keyframes notification {
+    0%{
+        top:50px;
+    }
+    50%{
+        top: 25px;
+    }
+    100%{
+        top: 0px;
+    }
+}
